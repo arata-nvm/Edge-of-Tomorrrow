@@ -15,6 +15,8 @@ public:
 
 	int getRank(int score);
 
+	Array<int> getScores(int numToGet);
+
 	int getHighScore();
 
 	int size();

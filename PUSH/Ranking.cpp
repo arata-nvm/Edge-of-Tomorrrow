@@ -6,7 +6,7 @@ Ranking::Ranking(String _fileName) {
 
 int Ranking::addScore(int score) {
 	ranks.emplace_back(score);
-	ranks.sort().reverse();
+	ranks.sort();
 	return getRank(score);
 }
 
@@ -21,6 +21,17 @@ int Ranking::getRank(int score) {
 
 int Ranking::getHighScore() {
 	return ranks[0];
+}
+
+Array<int> Ranking::getScores(int numToGet) {
+	if (ranks.size() < numToGet) {
+		return Range(0, numToGet).asArray();
+	}
+	Array<int> scores;
+	for (int i = 0; i < numToGet; i++) {
+		scores << ranks[i];
+	}
+	return scores;
 }
 
 int Ranking::size() {
@@ -42,5 +53,5 @@ void Ranking::loadRanking() {
 		ranks.emplace_back(Parse<int32>(line.value()));
 	}
 	reader.close();
-	ranks.sort().reverse();
+	ranks.sort();
 }

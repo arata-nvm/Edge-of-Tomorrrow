@@ -4,20 +4,15 @@
 
 enum class State {
 	Title,
-	Game,
-	GameOver
+	Game
 };
 
 struct GameData {
-	Seconds timeOfStage = 10s;
-
-	Stopwatch spentTime = Stopwatch(0s);
-
 	int32 sceneTransisionTime = 200;
 	
-	Ranking ranking = Ranking(U"score.txt");
+	Array<Ranking> rankings = { Ranking(U"stage1.txt"), Ranking(U"stage2.txt"), Ranking(U"stage3.txt") };
 
-	int32 lastScore = 0;
+	int selectedStage = 1;
 };
 
 using MyApp = SceneManager<State, GameData>;

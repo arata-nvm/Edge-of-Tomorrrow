@@ -315,6 +315,9 @@
     <Text Include="App\example\test.txt">
       <Filter>Resource Files\example</Filter>
     </Text>
+    <Text Include="App\stage1.txt" />
+    <Text Include="App\stage2.txt" />
+    <Text Include="App\stage3.txt" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="App\example\font\AnnyantRoman\AnnyantRoman.ttf">
@@ -344,9 +347,6 @@
     </Xml>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Chara.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Title.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -356,19 +356,22 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameOver.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Random.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Ranking.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerBall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyBall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ball.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -379,19 +382,19 @@
     <ClInclude Include="Game.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameOver.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Chara.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Random.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Stage.hpp">
+    <ClInclude Include="Ranking.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Ranking.h">
+    <ClInclude Include="PlayerBall.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyBall.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ball.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
