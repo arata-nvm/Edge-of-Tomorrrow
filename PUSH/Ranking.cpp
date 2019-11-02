@@ -11,12 +11,7 @@ int Ranking::addScore(int score) {
 }
 
 int Ranking::getRank(int score) {
-	if (!ranks.includes(score)) this->addScore(score);
-	int rank;
-	ranks.each_index([&](int i, int v) {
-		if (v == score) rank = i;
-	});
-	return rank + 1;
+	return 1;
 }
 
 int Ranking::getHighScore() {
@@ -47,6 +42,7 @@ void Ranking::saveRanking() {
 }
 
 void Ranking::loadRanking() {
+	ranks.clear();
 	TextReader reader(fileName);
 	Optional<String> line;
 	while (line = reader.readLine()) {

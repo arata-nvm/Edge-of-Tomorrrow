@@ -33,10 +33,10 @@ void Title::draw() const {
 
 	Array<int> ranks = getData().rankings[select - 1].getScores(3);
 	for (int i = 1; i <= 3; i++) {
-		FontAsset(U"Score")(ranks[i - 1], U" 秒").drawAt(centerX * 1.5, 300 + i * 50);
+		FontAsset(U"Score")(i, U"位 : ",  ranks[i - 1], U" 秒").draw(centerX * 1.3, 300 + i * 50);
 	}
 
-	FontAsset(U"Score")(U"Select stage").drawAt(centerX, 800);
+	FontAsset(U"Score")(U"上下でステージ選択\nスペースで決定").drawAt(centerX, 800);
 
 	Rect(0, 500, Scene::Width(), Scene::Height() - 500)
 		.draw(Arg::top = ColorF(0.0, 0.0), Arg::bottom = ColorF(0.0, 0.5));

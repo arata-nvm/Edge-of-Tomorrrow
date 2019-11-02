@@ -11,16 +11,21 @@ void Game::init(int level) {
 	finished = false;
 	switch (level) {
 	case 1:
-		for (int i = 0; i < 100; i++) {
-			others << EnemyBall(world, stage, 1);
-		}
-		break;
-	case 2:
 		for (int i = 0; i < 1; i++) {
 			others << EnemyBall(world, stage, 2);
 		}
+		break;
+	case 2:
+		for (int i = 0; i < 10; i++) {
+			others << EnemyBall(world, stage, 2);
+		}
+		break;
+	case 3:
+		for (int i = 0; i < 15; i++) {
+			others << EnemyBall(world, stage, 3);
+		}
+		break;
 	}
-
 }
 
 void Game::update() {
@@ -44,20 +49,21 @@ void Game::update() {
 	if (others.size() == 0) {
 		spentTime.pause();
 		getData().rankings[getData().selectedStage - 1].addScore(spentTime.s());
-		getData().rankings[getData().selectedStage - 1].saveRanking();
+	 	getData().rankings[getData().selectedStage - 1].saveRanking();
 		finished = true;
 		return;
 	}
 
 	camera.update();
 
-	world.update(1.0 / 60.0, 12, 4);
+	 
+	world .update(1.0 / 60.0, 12, 4);
 
 	ball.update();
 
-	camera.setCenter(ball.getPos());
+	camera.setCenter(stage.center());
 
-	//others.remove_if([](EnemyBall b) { return b.isOutOfStage(); });
+	others.remove_if([](EnemyBall b) { return b.isOutOfStage(); });
 
 	others.each([&](EnemyBall& b) { b.update(ball); });
 }
@@ -71,7 +77,7 @@ void Game::draw() const {
 		ball.draw();
 
 		others.each([](EnemyBall b) { b.draw(); });
-	}
+ 	}
 
 	FontAsset(U"Score")(U"Œo‰ßŽžŠÔ: ", spentTime.s(), U"•b").drawAt(Scene::Center().x * 1.8, Scene::Height() - 160);
 	FontAsset(U"Score")(U"‚ ‚Æ ", others.size(), U"‘Ì").drawAt(Scene::Center().x * 1.8, Scene::Height() - 120);

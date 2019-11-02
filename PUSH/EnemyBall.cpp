@@ -18,7 +18,7 @@ void EnemyBall::update(PlayerBall ball) {
 		v = Vec2(25, 25) - body.getPos();
 	}
 	v *= Random();
-	v *= 0.2;
+	v *= 0.1;
 	v *= body.getMass();
 
 	body.applyLinearImpulse(v);

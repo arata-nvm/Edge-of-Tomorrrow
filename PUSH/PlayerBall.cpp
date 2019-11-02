@@ -9,20 +9,20 @@ Vec2 PlayerBall::getPos() const {
 }
 
 void PlayerBall::update() {
-	int scale = 10;
-	if (KeyUp.pressed()) {
+	int scale = 15;
+	if (KeyUp.pressed() || KeyW.pressed() || KeyK.pressed()) {
 		body.applyLinearImpulse(Vec2(0, -scale));
 	}
 
-	if (KeyLeft.pressed()) {
+	if (KeyLeft.pressed() || KeyA.pressed() || KeyH.pressed()) {
 		body.applyLinearImpulse(Vec2(-scale, 0));
 	}
 
-	if (KeyDown.pressed()) {
+	if (KeyDown.pressed() || KeyS.pressed() || KeyJ.pressed()) {
 		body.applyLinearImpulse(Vec2(0, scale));
 	}
 
-	if (KeyRight.pressed()) {
+	if (KeyRight.pressed() || KeyD.pressed() || KeyL.pressed()) {
 		body.applyLinearImpulse(Vec2(scale, 0));
 	}
 
@@ -30,5 +30,5 @@ void PlayerBall::update() {
 }
 
 void PlayerBall::draw() const {
-	body.draw(Palette::Deepskyblue);
+	body.draw(Palette::Pink);
 }

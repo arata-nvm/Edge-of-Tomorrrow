@@ -12,7 +12,7 @@ private:
 
 	P2World world = P2World(0);
 
-	PlayerBall ball = PlayerBall(world, stage, 2);
+	PlayerBall ball = PlayerBall(world, stage, 5);
 
 	Array<EnemyBall> others;
 	
